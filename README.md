@@ -1,16 +1,13 @@
-# resume_builder
+# Resume Builder
 
-A new Flutter project.
+Flutter project to build Resume based on details provided that runs on mobile and web.
 
-## Getting Started
+## Local Developement Steps
 
-This project is a starting point for a Flutter application.
+1. Clone the Repository
 
-A few resources to get you started if this is your first Flutter project:
+2. Make sure you are using latest version of Flutter and then run `flutter pub get` to get dependencies.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. Run `dart run build_runner build` for code-generation.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Run the app on testing device `flutter run`.
