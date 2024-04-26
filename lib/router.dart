@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:resume_builder/features/resume/presentation/details.screen.dart';
+import 'package:resume_builder/features/resume/presentation/resume.screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'core/common/screens/error.screen.dart';
@@ -18,6 +19,7 @@ GoRouter router(RouterRef ref) {
     redirect: (context, state) => null,
     routes: [
       DetailsScreen.route(),
+      ResumeScreen.route(),
     ],
     errorPageBuilder: (context, state) => MaterialPage(
       child: ErrorScreen(

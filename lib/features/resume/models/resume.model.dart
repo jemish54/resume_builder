@@ -6,7 +6,6 @@ part 'resume.model.freezed.dart';
 class ResumeModel with _$ResumeModel {
   const factory ResumeModel({
     required final PersonalDetails personalDetails,
-    required final List<Link> links,
     required final List<Experience> workExperience,
     required final List<Project> projects,
     required final List<Education> educations,
@@ -17,57 +16,50 @@ class ResumeModel with _$ResumeModel {
 @freezed
 class PersonalDetails with _$PersonalDetails {
   const factory PersonalDetails({
-    required final String firstName,
-    required final String lastName,
-    required final String email,
-    required final String phone,
+    @Default('') final String firstName,
+    @Default('') final String lastName,
+    @Default('') final String applicationRole,
+    @Default('') final String email,
+    @Default('') final String phone,
+    @Default([]) final List<String> items,
   }) = _PersonalDetails;
-}
-
-@freezed
-class Link with _$Link {
-  const factory Link({
-    required final String label,
-    required final String url,
-  }) = _Link;
 }
 
 @freezed
 class Experience with _$Experience {
   const factory Experience({
-    required final String roleTitle,
-    required final String organizationName,
-    required final String workPeriod,
-    required final String location,
-    required final List<String> works,
+    @Default('') final String roleTitle,
+    @Default('') final String organizationName,
+    @Default('') final String workPeriod,
+    @Default('') final String location,
+    @Default([]) final List<String> works,
   }) = _Experience;
 }
 
 @freezed
 class Project with _$Project {
   const factory Project({
-    required final String title,
-    required final String? url,
-    required final String tagline,
-    required final String period,
-    required final List<String> descriptions,
+    @Default('') final String title,
+    @Default('') final String tagline,
+    @Default('') final String period,
+    @Default([]) final List<String> descriptions,
   }) = _Project;
 }
 
 @freezed
 class Education with _$Education {
   const factory Education({
-    required final String course,
-    required final String instituteName,
-    required final String timePeriod,
-    required final String score,
+    @Default('') final String course,
+    @Default('') final String instituteName,
+    @Default('') final String timePeriod,
+    @Default('') final String score,
   }) = _Education;
 }
 
 @freezed
 class Skill with _$Skill {
   const factory Skill({
-    required final String title,
-    required final List<String> subSkills,
+    @Default('') final String title,
+    @Default([]) final List<String> subSkills,
   }) = _Skill;
 }

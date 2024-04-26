@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:resume_builder/router.dart';
 
@@ -16,13 +17,15 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp.router(
       title: 'Resume Builder',
-      themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.light,
       theme: ThemeData(
         colorSchemeSeed: Colors.blueGrey,
+        fontFamily: GoogleFonts.montserrat().fontFamily,
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
         colorSchemeSeed: Colors.blueAccent,
+        fontFamily: GoogleFonts.montserrat().fontFamily,
         useMaterial3: true,
         brightness: Brightness.dark,
       ),

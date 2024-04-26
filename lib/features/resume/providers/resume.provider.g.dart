@@ -1,24 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'router.dart';
+part of 'resume.provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'1456790c6673e0a2c541612081f88f714a272316';
+String _$resumeHash() => r'3e6e090d135a9cb7551f8a43c5a0e8ff018a9771';
 
-/// See also [router].
-@ProviderFor(router)
-final routerProvider = AutoDisposeProvider<GoRouter>.internal(
-  router,
-  name: r'routerProvider',
+/// See also [Resume].
+@ProviderFor(Resume)
+final resumeProvider =
+    AutoDisposeNotifierProvider<Resume, ResumeModel>.internal(
+  Resume.new,
+  name: r'resumeProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$routerHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$resumeHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef RouterRef = AutoDisposeProviderRef<GoRouter>;
+typedef _$Resume = AutoDisposeNotifier<ResumeModel>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
