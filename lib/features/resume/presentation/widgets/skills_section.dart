@@ -44,6 +44,7 @@ class SkillsSection extends ConsumerWidget {
                   ),
                   Wrap(
                     children: skills.subSkills
+                        .split(',')
                         .map(
                           (e) => Container(
                             margin: EdgeInsets.symmetric(

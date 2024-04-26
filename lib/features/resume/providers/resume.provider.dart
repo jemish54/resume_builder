@@ -14,81 +14,26 @@ class Resume extends _$Resume {
         applicationRole: 'Your Role',
         email: 'Your Email',
         phone: '+91-0987654321',
-        items: [
-          'Website',
-          'GitHub Profile',
-          'LinkedIn Profile',
-        ],
+        items: 'website,github,linkedin',
       ),
       workExperience: [
         Experience(
-          roleTitle: 'Work Role',
-          organizationName: 'Your Organization',
-          workPeriod: 'Your Time Period',
-          location: 'Your Location',
-          works: [
-            'WORK LINE 1',
-            'WORK LINE 2',
-            'WORK LINE 3',
-            'WORK LINE 4',
-          ],
-        ),
-        Experience(
-          roleTitle: 'Work Role',
-          organizationName: 'Your Organization',
-          workPeriod: 'Your Time Period',
-          location: 'Your Location',
-          works: [
-            'WORK LINE 1',
-            'WORK LINE 2',
-            'WORK LINE 3',
-            'WORK LINE 4',
-          ],
-        ),
-        Experience(
-          roleTitle: 'Work Role',
-          organizationName: 'Your Organization',
-          workPeriod: 'Your Time Period',
-          location: 'Your Location',
-          works: [
-            'WORK LINE 1',
-            'WORK LINE 2',
-            'WORK LINE 3',
-            'WORK LINE 4',
-          ],
-        ),
+            roleTitle: 'Work Role',
+            organizationName: 'Your Organization',
+            workPeriod: 'Your Time Period',
+            location: 'Your Location',
+            description: 'WORK 1,WORK 2,Work 3'),
       ],
       projects: [
         Project(
           title: 'Your Project Title',
           tagline: 'Project Tagline',
           period: '3 Months',
-          descriptions: [
-            'Project experience 1',
-            'Project experience 2',
-            'Project experience 3',
-            'Project experience 4',
-          ],
-        ),
-        Project(
-          title: 'Your Project Title',
-          tagline: 'Project Tagline',
-          period: '3 Months',
-          descriptions: [
-            'Project experience 1',
-            'Project experience 2',
-            'Project experience 3',
-            'Project experience 4',
-          ],
+          description:
+              'Project experience 1,Project experience 2,Project experience 3,Project experience 4',
         ),
       ],
       educations: [
-        Education(
-          course: 'Your Course',
-          instituteName: 'Your Institute',
-          timePeriod: 'Your Time Period',
-          score: 'Your Score',
-        ),
         Education(
           course: 'Your Course',
           instituteName: 'Your Institute',
@@ -99,30 +44,7 @@ class Resume extends _$Resume {
       skills: [
         Skill(
           title: 'Your Main Skill',
-          subSkills: [
-            'Subskill 1',
-            'Subskill 2',
-            'Subskill 3',
-            'Subskill 4',
-          ],
-        ),
-        Skill(
-          title: 'Your Main Skill',
-          subSkills: [
-            'Subskill 1',
-            'Subskill 2',
-            'Subskill 3',
-            'Subskill 4',
-          ],
-        ),
-        Skill(
-          title: 'Your Main Skill',
-          subSkills: [
-            'Subskill 1',
-            'Subskill 2',
-            'Subskill 3',
-            'Subskill 4',
-          ],
+          subSkills: 'Skill 1,Skill 2,Skill 3',
         ),
       ],
     );
@@ -130,12 +52,93 @@ class Resume extends _$Resume {
 
   set firstName(String firstName) => state = state.copyWith(
       personalDetails: state.personalDetails.copyWith(firstName: firstName));
-  set lastName(String firstName) => state = state.copyWith(
-      personalDetails: state.personalDetails.copyWith(firstName: firstName));
-  set applicationRole(String firstName) => state = state.copyWith(
-      personalDetails: state.personalDetails.copyWith(firstName: firstName));
-  set email(String firstName) => state = state.copyWith(
-      personalDetails: state.personalDetails.copyWith(firstName: firstName));
-  set phone(String firstName) => state = state.copyWith(
-      personalDetails: state.personalDetails.copyWith(firstName: firstName));
+  set lastName(String lastName) => state = state.copyWith(
+      personalDetails: state.personalDetails.copyWith(lastName: lastName));
+  set applicationRole(String applicationRole) => state = state.copyWith(
+      personalDetails:
+          state.personalDetails.copyWith(applicationRole: applicationRole));
+  set email(String email) => state = state.copyWith(
+      personalDetails: state.personalDetails.copyWith(email: email));
+  set phone(String phone) => state = state.copyWith(
+      personalDetails: state.personalDetails.copyWith(phone: phone));
+  set description(String description) => state = state.copyWith(
+      personalDetails: state.personalDetails.copyWith(items: description));
+
+  // WORK
+  experienceRole(int index, String title) => state = state.copyWith(
+      workExperience: [...state.workExperience]..[index] =
+          state.workExperience[index].copyWith(roleTitle: title));
+  experienceOrg(int index, String org) => state = state.copyWith(
+      workExperience: [...state.workExperience]..[index] =
+          state.workExperience[index].copyWith(organizationName: org));
+  experienceTime(int index, String time) => state = state.copyWith(
+      workExperience: [...state.workExperience]..[index] =
+          state.workExperience[index].copyWith(workPeriod: time));
+  experienceDesc(int index, String description) => state = state.copyWith(
+      workExperience: [...state.workExperience]..[index] =
+          state.workExperience[index].copyWith(description: description));
+  experienceLocation(int index, String location) => state = state.copyWith(
+      workExperience: [...state.workExperience]..[index] =
+          state.workExperience[index].copyWith(location: location));
+
+  addExperienceItem() => state = state
+      .copyWith(workExperience: [...state.workExperience, const Experience()]);
+  removeExperienceItem(int index) => state = state.copyWith(
+        workExperience: [...List.from(state.workExperience)..removeAt(index)],
+      );
+
+  projectTitle(int index, String title) => state = state.copyWith(
+      projects: [...state.projects]..[index] =
+          state.projects[index].copyWith(title: title));
+  projectTag(int index, String tagline) => state = state.copyWith(
+      projects: [...state.projects]..[index] =
+          state.projects[index].copyWith(tagline: tagline));
+  projectPeriod(int index, String workPeriod) => state = state.copyWith(
+      projects: [...state.projects]..[index] =
+          state.projects[index].copyWith(period: workPeriod));
+  projectDescription(int index, String description) => state = state.copyWith(
+      projects: [...state.projects]..[index] =
+          state.projects[index].copyWith(description: description));
+
+  addProjectItem() =>
+      state = state.copyWith(projects: [...state.projects, const Project()]);
+  removeProjectItem(int index) => state = state.copyWith(
+        projects: [...List.from(state.projects)..removeAt(index)],
+      );
+
+  // Education
+
+  eduCourse(int index, String course) => state = state.copyWith(
+      educations: [...state.educations]..[index] =
+          state.educations[index].copyWith(course: course));
+  eduInstitute(int index, String instituteName) => state = state.copyWith(
+      educations: [...state.educations]..[index] =
+          state.educations[index].copyWith(instituteName: instituteName));
+  eduPeriod(int index, String period) => state = state.copyWith(
+      educations: [...state.educations]..[index] =
+          state.educations[index].copyWith(instituteName: period));
+  eduScore(int index, String score) => state = state.copyWith(
+      educations: [...state.educations]..[index] =
+          state.educations[index].copyWith(score: score));
+
+  addEducationItemItem() => state =
+      state.copyWith(educations: [...state.educations, const Education()]);
+  removeEducationItem(int index) => state = state.copyWith(
+        educations: [...List.from(state.educations)..removeAt(index)],
+      );
+
+  //SKIllS
+
+  skillTitle(int index, String title) => state = state.copyWith(
+      skills: [...state.skills]..[index] =
+          state.skills[index].copyWith(title: title));
+  skillsDescription(int index, String description) => state = state.copyWith(
+      skills: [...state.skills]..[index] =
+          state.skills[index].copyWith(subSkills: description));
+
+  addSkillItem() =>
+      state = state.copyWith(skills: [...state.skills, const Skill()]);
+  removeSkillItem(int index) => state = state.copyWith(
+        skills: [...List.from(state.skills)..removeAt(index)],
+      );
 }

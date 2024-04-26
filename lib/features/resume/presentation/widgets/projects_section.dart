@@ -70,20 +70,20 @@ class ProjectsSection extends ConsumerWidget {
                     ],
                   ),
                   SizedBox(height: sizeDelta),
-                  ...project.descriptions.map(
-                    (point) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          '- $point',
-                          style: TextStyle(
-                            fontSize: fontDelta * 1.6,
-                            color: AppColors.bodyTextColor,
-                          ),
+                  ...project.description.split(',').map(
+                        (point) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              '- $point',
+                              style: TextStyle(
+                                fontSize: fontDelta * 1.6,
+                                color: AppColors.bodyTextColor,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
                 ],
               ),
             ),

@@ -95,18 +95,11 @@ class ExperienceSection extends ConsumerWidget {
                     ],
                   ),
                   SizedBox(height: sizeDelta),
-                  ...e.works.map(
-                    (work) => Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          '- $work',
-                          style: TextStyle(
-                            fontSize: fontDelta * 1.4,
-                            color: AppColors.bodyTextColor,
-                          ),
-                        ),
-                      ],
+                  Text(
+                    e.description,
+                    style: TextStyle(
+                      fontSize: fontDelta * 1.4,
+                      color: AppColors.bodyTextColor,
                     ),
                   ),
                 ],

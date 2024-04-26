@@ -137,19 +137,19 @@ class __$$ResumeModelImplCopyWithImpl<$Res>
           : personalDetails // ignore: cast_nullable_to_non_nullable
               as PersonalDetails,
       workExperience: null == workExperience
-          ? _value._workExperience
+          ? _value.workExperience
           : workExperience // ignore: cast_nullable_to_non_nullable
               as List<Experience>,
       projects: null == projects
-          ? _value._projects
+          ? _value.projects
           : projects // ignore: cast_nullable_to_non_nullable
               as List<Project>,
       educations: null == educations
-          ? _value._educations
+          ? _value.educations
           : educations // ignore: cast_nullable_to_non_nullable
               as List<Education>,
       skills: null == skills
-          ? _value._skills
+          ? _value.skills
           : skills // ignore: cast_nullable_to_non_nullable
               as List<Skill>,
     ));
@@ -161,48 +161,21 @@ class __$$ResumeModelImplCopyWithImpl<$Res>
 class _$ResumeModelImpl implements _ResumeModel {
   const _$ResumeModelImpl(
       {required this.personalDetails,
-      required final List<Experience> workExperience,
-      required final List<Project> projects,
-      required final List<Education> educations,
-      required final List<Skill> skills})
-      : _workExperience = workExperience,
-        _projects = projects,
-        _educations = educations,
-        _skills = skills;
+      required this.workExperience,
+      required this.projects,
+      required this.educations,
+      required this.skills});
 
   @override
   final PersonalDetails personalDetails;
-  final List<Experience> _workExperience;
   @override
-  List<Experience> get workExperience {
-    if (_workExperience is EqualUnmodifiableListView) return _workExperience;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_workExperience);
-  }
-
-  final List<Project> _projects;
+  final List<Experience> workExperience;
   @override
-  List<Project> get projects {
-    if (_projects is EqualUnmodifiableListView) return _projects;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_projects);
-  }
-
-  final List<Education> _educations;
+  final List<Project> projects;
   @override
-  List<Education> get educations {
-    if (_educations is EqualUnmodifiableListView) return _educations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_educations);
-  }
-
-  final List<Skill> _skills;
+  final List<Education> educations;
   @override
-  List<Skill> get skills {
-    if (_skills is EqualUnmodifiableListView) return _skills;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_skills);
-  }
+  final List<Skill> skills;
 
   @override
   String toString() {
@@ -217,21 +190,21 @@ class _$ResumeModelImpl implements _ResumeModel {
             (identical(other.personalDetails, personalDetails) ||
                 other.personalDetails == personalDetails) &&
             const DeepCollectionEquality()
-                .equals(other._workExperience, _workExperience) &&
-            const DeepCollectionEquality().equals(other._projects, _projects) &&
+                .equals(other.workExperience, workExperience) &&
+            const DeepCollectionEquality().equals(other.projects, projects) &&
             const DeepCollectionEquality()
-                .equals(other._educations, _educations) &&
-            const DeepCollectionEquality().equals(other._skills, _skills));
+                .equals(other.educations, educations) &&
+            const DeepCollectionEquality().equals(other.skills, skills));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       personalDetails,
-      const DeepCollectionEquality().hash(_workExperience),
-      const DeepCollectionEquality().hash(_projects),
-      const DeepCollectionEquality().hash(_educations),
-      const DeepCollectionEquality().hash(_skills));
+      const DeepCollectionEquality().hash(workExperience),
+      const DeepCollectionEquality().hash(projects),
+      const DeepCollectionEquality().hash(educations),
+      const DeepCollectionEquality().hash(skills));
 
   @JsonKey(ignore: true)
   @override
@@ -271,7 +244,7 @@ mixin _$PersonalDetails {
   String get applicationRole => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
-  List<String> get items => throw _privateConstructorUsedError;
+  String get items => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PersonalDetailsCopyWith<PersonalDetails> get copyWith =>
@@ -290,7 +263,7 @@ abstract class $PersonalDetailsCopyWith<$Res> {
       String applicationRole,
       String email,
       String phone,
-      List<String> items});
+      String items});
 }
 
 /// @nodoc
@@ -337,7 +310,7 @@ class _$PersonalDetailsCopyWithImpl<$Res, $Val extends PersonalDetails>
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ) as $Val);
   }
 }
@@ -356,7 +329,7 @@ abstract class _$$PersonalDetailsImplCopyWith<$Res>
       String applicationRole,
       String email,
       String phone,
-      List<String> items});
+      String items});
 }
 
 /// @nodoc
@@ -399,9 +372,9 @@ class __$$PersonalDetailsImplCopyWithImpl<$Res>
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
       items: null == items
-          ? _value._items
+          ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ));
   }
 }
@@ -415,8 +388,7 @@ class _$PersonalDetailsImpl implements _PersonalDetails {
       this.applicationRole = '',
       this.email = '',
       this.phone = '',
-      final List<String> items = const []})
-      : _items = items;
+      this.items = ''});
 
   @override
   @JsonKey()
@@ -433,14 +405,9 @@ class _$PersonalDetailsImpl implements _PersonalDetails {
   @override
   @JsonKey()
   final String phone;
-  final List<String> _items;
   @override
   @JsonKey()
-  List<String> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
-  }
+  final String items;
 
   @override
   String toString() {
@@ -460,18 +427,12 @@ class _$PersonalDetailsImpl implements _PersonalDetails {
                 other.applicationRole == applicationRole) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            (identical(other.items, items) || other.items == items));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      firstName,
-      lastName,
-      applicationRole,
-      email,
-      phone,
-      const DeepCollectionEquality().hash(_items));
+      runtimeType, firstName, lastName, applicationRole, email, phone, items);
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +449,7 @@ abstract class _PersonalDetails implements PersonalDetails {
       final String applicationRole,
       final String email,
       final String phone,
-      final List<String> items}) = _$PersonalDetailsImpl;
+      final String items}) = _$PersonalDetailsImpl;
 
   @override
   String get firstName;
@@ -501,7 +462,7 @@ abstract class _PersonalDetails implements PersonalDetails {
   @override
   String get phone;
   @override
-  List<String> get items;
+  String get items;
   @override
   @JsonKey(ignore: true)
   _$$PersonalDetailsImplCopyWith<_$PersonalDetailsImpl> get copyWith =>
@@ -514,7 +475,7 @@ mixin _$Experience {
   String get organizationName => throw _privateConstructorUsedError;
   String get workPeriod => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
-  List<String> get works => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ExperienceCopyWith<Experience> get copyWith =>
@@ -532,7 +493,7 @@ abstract class $ExperienceCopyWith<$Res> {
       String organizationName,
       String workPeriod,
       String location,
-      List<String> works});
+      String description});
 }
 
 /// @nodoc
@@ -552,7 +513,7 @@ class _$ExperienceCopyWithImpl<$Res, $Val extends Experience>
     Object? organizationName = null,
     Object? workPeriod = null,
     Object? location = null,
-    Object? works = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       roleTitle: null == roleTitle
@@ -571,10 +532,10 @@ class _$ExperienceCopyWithImpl<$Res, $Val extends Experience>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      works: null == works
-          ? _value.works
-          : works // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -592,7 +553,7 @@ abstract class _$$ExperienceImplCopyWith<$Res>
       String organizationName,
       String workPeriod,
       String location,
-      List<String> works});
+      String description});
 }
 
 /// @nodoc
@@ -610,7 +571,7 @@ class __$$ExperienceImplCopyWithImpl<$Res>
     Object? organizationName = null,
     Object? workPeriod = null,
     Object? location = null,
-    Object? works = null,
+    Object? description = null,
   }) {
     return _then(_$ExperienceImpl(
       roleTitle: null == roleTitle
@@ -629,10 +590,10 @@ class __$$ExperienceImplCopyWithImpl<$Res>
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      works: null == works
-          ? _value._works
-          : works // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -645,8 +606,7 @@ class _$ExperienceImpl implements _Experience {
       this.organizationName = '',
       this.workPeriod = '',
       this.location = '',
-      final List<String> works = const []})
-      : _works = works;
+      this.description = ''});
 
   @override
   @JsonKey()
@@ -660,18 +620,13 @@ class _$ExperienceImpl implements _Experience {
   @override
   @JsonKey()
   final String location;
-  final List<String> _works;
   @override
   @JsonKey()
-  List<String> get works {
-    if (_works is EqualUnmodifiableListView) return _works;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_works);
-  }
+  final String description;
 
   @override
   String toString() {
-    return 'Experience(roleTitle: $roleTitle, organizationName: $organizationName, workPeriod: $workPeriod, location: $location, works: $works)';
+    return 'Experience(roleTitle: $roleTitle, organizationName: $organizationName, workPeriod: $workPeriod, location: $location, description: $description)';
   }
 
   @override
@@ -687,12 +642,13 @@ class _$ExperienceImpl implements _Experience {
                 other.workPeriod == workPeriod) &&
             (identical(other.location, location) ||
                 other.location == location) &&
-            const DeepCollectionEquality().equals(other._works, _works));
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, roleTitle, organizationName,
-      workPeriod, location, const DeepCollectionEquality().hash(_works));
+      workPeriod, location, description);
 
   @JsonKey(ignore: true)
   @override
@@ -707,7 +663,7 @@ abstract class _Experience implements Experience {
       final String organizationName,
       final String workPeriod,
       final String location,
-      final List<String> works}) = _$ExperienceImpl;
+      final String description}) = _$ExperienceImpl;
 
   @override
   String get roleTitle;
@@ -718,7 +674,7 @@ abstract class _Experience implements Experience {
   @override
   String get location;
   @override
-  List<String> get works;
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$ExperienceImplCopyWith<_$ExperienceImpl> get copyWith =>
@@ -730,7 +686,7 @@ mixin _$Project {
   String get title => throw _privateConstructorUsedError;
   String get tagline => throw _privateConstructorUsedError;
   String get period => throw _privateConstructorUsedError;
-  List<String> get descriptions => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProjectCopyWith<Project> get copyWith => throw _privateConstructorUsedError;
@@ -741,8 +697,7 @@ abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) =
       _$ProjectCopyWithImpl<$Res, Project>;
   @useResult
-  $Res call(
-      {String title, String tagline, String period, List<String> descriptions});
+  $Res call({String title, String tagline, String period, String description});
 }
 
 /// @nodoc
@@ -761,7 +716,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? title = null,
     Object? tagline = null,
     Object? period = null,
-    Object? descriptions = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -776,10 +731,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as String,
-      descriptions: null == descriptions
-          ? _value.descriptions
-          : descriptions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -791,8 +746,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       __$$ProjectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String title, String tagline, String period, List<String> descriptions});
+  $Res call({String title, String tagline, String period, String description});
 }
 
 /// @nodoc
@@ -809,7 +763,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? title = null,
     Object? tagline = null,
     Object? period = null,
-    Object? descriptions = null,
+    Object? description = null,
   }) {
     return _then(_$ProjectImpl(
       title: null == title
@@ -824,10 +778,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as String,
-      descriptions: null == descriptions
-          ? _value._descriptions
-          : descriptions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -839,8 +793,7 @@ class _$ProjectImpl implements _Project {
       {this.title = '',
       this.tagline = '',
       this.period = '',
-      final List<String> descriptions = const []})
-      : _descriptions = descriptions;
+      this.description = ''});
 
   @override
   @JsonKey()
@@ -851,18 +804,13 @@ class _$ProjectImpl implements _Project {
   @override
   @JsonKey()
   final String period;
-  final List<String> _descriptions;
   @override
   @JsonKey()
-  List<String> get descriptions {
-    if (_descriptions is EqualUnmodifiableListView) return _descriptions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_descriptions);
-  }
+  final String description;
 
   @override
   String toString() {
-    return 'Project(title: $title, tagline: $tagline, period: $period, descriptions: $descriptions)';
+    return 'Project(title: $title, tagline: $tagline, period: $period, description: $description)';
   }
 
   @override
@@ -873,13 +821,13 @@ class _$ProjectImpl implements _Project {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.tagline, tagline) || other.tagline == tagline) &&
             (identical(other.period, period) || other.period == period) &&
-            const DeepCollectionEquality()
-                .equals(other._descriptions, _descriptions));
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, title, tagline, period,
-      const DeepCollectionEquality().hash(_descriptions));
+  int get hashCode =>
+      Object.hash(runtimeType, title, tagline, period, description);
 
   @JsonKey(ignore: true)
   @override
@@ -893,7 +841,7 @@ abstract class _Project implements Project {
       {final String title,
       final String tagline,
       final String period,
-      final List<String> descriptions}) = _$ProjectImpl;
+      final String description}) = _$ProjectImpl;
 
   @override
   String get title;
@@ -902,7 +850,7 @@ abstract class _Project implements Project {
   @override
   String get period;
   @override
-  List<String> get descriptions;
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$ProjectImplCopyWith<_$ProjectImpl> get copyWith =>
@@ -1093,7 +1041,7 @@ abstract class _Education implements Education {
 /// @nodoc
 mixin _$Skill {
   String get title => throw _privateConstructorUsedError;
-  List<String> get subSkills => throw _privateConstructorUsedError;
+  String get subSkills => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SkillCopyWith<Skill> get copyWith => throw _privateConstructorUsedError;
@@ -1104,7 +1052,7 @@ abstract class $SkillCopyWith<$Res> {
   factory $SkillCopyWith(Skill value, $Res Function(Skill) then) =
       _$SkillCopyWithImpl<$Res, Skill>;
   @useResult
-  $Res call({String title, List<String> subSkills});
+  $Res call({String title, String subSkills});
 }
 
 /// @nodoc
@@ -1131,7 +1079,7 @@ class _$SkillCopyWithImpl<$Res, $Val extends Skill>
       subSkills: null == subSkills
           ? _value.subSkills
           : subSkills // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ) as $Val);
   }
 }
@@ -1143,7 +1091,7 @@ abstract class _$$SkillImplCopyWith<$Res> implements $SkillCopyWith<$Res> {
       __$$SkillImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, List<String> subSkills});
+  $Res call({String title, String subSkills});
 }
 
 /// @nodoc
@@ -1166,9 +1114,9 @@ class __$$SkillImplCopyWithImpl<$Res>
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       subSkills: null == subSkills
-          ? _value._subSkills
+          ? _value.subSkills
           : subSkills // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ));
   }
 }
@@ -1176,20 +1124,14 @@ class __$$SkillImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SkillImpl implements _Skill {
-  const _$SkillImpl({this.title = '', final List<String> subSkills = const []})
-      : _subSkills = subSkills;
+  const _$SkillImpl({this.title = '', this.subSkills = ''});
 
   @override
   @JsonKey()
   final String title;
-  final List<String> _subSkills;
   @override
   @JsonKey()
-  List<String> get subSkills {
-    if (_subSkills is EqualUnmodifiableListView) return _subSkills;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_subSkills);
-  }
+  final String subSkills;
 
   @override
   String toString() {
@@ -1202,13 +1144,12 @@ class _$SkillImpl implements _Skill {
         (other.runtimeType == runtimeType &&
             other is _$SkillImpl &&
             (identical(other.title, title) || other.title == title) &&
-            const DeepCollectionEquality()
-                .equals(other._subSkills, _subSkills));
+            (identical(other.subSkills, subSkills) ||
+                other.subSkills == subSkills));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, title, const DeepCollectionEquality().hash(_subSkills));
+  int get hashCode => Object.hash(runtimeType, title, subSkills);
 
   @JsonKey(ignore: true)
   @override
@@ -1218,13 +1159,13 @@ class _$SkillImpl implements _Skill {
 }
 
 abstract class _Skill implements Skill {
-  const factory _Skill({final String title, final List<String> subSkills}) =
+  const factory _Skill({final String title, final String subSkills}) =
       _$SkillImpl;
 
   @override
   String get title;
   @override
-  List<String> get subSkills;
+  String get subSkills;
   @override
   @JsonKey(ignore: true)
   _$$SkillImplCopyWith<_$SkillImpl> get copyWith =>

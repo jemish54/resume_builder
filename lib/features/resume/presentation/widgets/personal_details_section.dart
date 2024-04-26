@@ -51,15 +51,16 @@ class PersonalDetailsSection extends ConsumerWidget {
                       state.phone,
                       style: style,
                     ),
-                    ...state.items.map(
-                      (item) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                        child: Text(
-                          item,
-                          style: style,
+                    ...state.items.split(' ').map(
+                          (item) => Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 4.0),
+                            child: Text(
+                              item,
+                              style: style,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
                   ],
                 ),
               );
